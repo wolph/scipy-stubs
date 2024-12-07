@@ -4,13 +4,13 @@ from packaging.specifiers import SpecifierSet
 from packaging.version import Version  
 import requests  
 import os  
-import tomli  # For Python 3.11+, you can use tomllib instead  
+import tomllib
   
 def get_pyproject_data():  
     """Reads and returns the data from pyproject.toml."""  
     pyproject_path = os.path.join(os.path.dirname(__file__), "../pyproject.toml")  
     with open(pyproject_path, "rb") as f:  
-        pyproject = tomli.load(f)  
+        pyproject = tomllib.load(f)  
     return pyproject  
   
 def get_minimum_python_version(pyproject):  
